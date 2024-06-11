@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Pyramids slots 777.sln"
+    "dotnet.defaultSolution": "PyramidsSlots777.sln"
 }

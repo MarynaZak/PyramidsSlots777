@@ -10,15 +10,17 @@ public class EnergyBar : MonoBehaviour
     public int nowEnergy;
     int pastEnergy;
     public GameObject alert;
-    GameObject grey;
+    // GameObject grey;
+
+    [SerializeField] private Image _imageToFillenergy;
 
     void Start()
     {
         alert.transform.position = new Vector3(0, 0, -50000);
 
-        grey = transform.Find("Grey").gameObject;
+        //grey = transform.Find("Grey").gameObject; //Dont do that pls(((
 
-        if(!PlayerPrefs.HasKey("energy"))
+        if (!PlayerPrefs.HasKey("energy"))
         {
             PlayerPrefs.SetInt("energy", maxEnergy);
         }
@@ -26,26 +28,33 @@ public class EnergyBar : MonoBehaviour
         nowEnergy = PlayerPrefs.GetInt("energy");
 
         pastEnergy = nowEnergy;
-        energyText.text = nowEnergy.ToString()+"/"+maxEnergy.ToString();
+        energyText.text = nowEnergy.ToString() + "/" + maxEnergy.ToString();
 
-        if(nowEnergy == 0)
+        if (nowEnergy == 0)
         {
             alert.transform.position = new Vector3(0, 0, -2);
         }
-        else{
+        else
+        {
             alert.transform.position = new Vector3(0, 0, -50000);
         }
+
+        _imageToFillenergy.fillAmount = (float)nowEnergy / (float)maxEnergy;
+
     }
 
     void Update()
     {
-        grey.transform.localPosition = new Vector3(6f-0.6f*((maxEnergy-nowEnergy)/10), 0, -1);
+        //grey.transform.localPosition = new Vector3(6f - 0.6f * ((maxEnergy - nowEnergy) / 10), 0, -1);
 
-        if(nowEnergy != pastEnergy)
+        if (nowEnergy != pastEnergy)
         {
-            energyText.text = nowEnergy.ToString()+"/"+maxEnergy.ToString();
+            energyText.text = nowEnergy.ToString() + "/" + maxEnergy.ToString();
             pastEnergy = nowEnergy;
-            if(nowEnergy == 0)
+
+            _imageToFillenergy.fillAmount = (float)nowEnergy / (float)maxEnergy;
+
+            if (nowEnergy == 0)
             {
                 alert.transform.position = new Vector3(0, 0, -2);
             }
