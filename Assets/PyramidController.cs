@@ -30,10 +30,7 @@ public class PyramidController : MonoBehaviour
         {
             for(int i = 0; i < pyramidsOpened; i++)
             {
-                pyramids[i].gameObject.SetActive(false);
-            }
-            for(int i = 0; i < pyramidsOpened; i++)
-            {
+                pyramids[0].gameObject.SetActive(false);
                 pyramids.RemoveAt(0);
             }
         }
