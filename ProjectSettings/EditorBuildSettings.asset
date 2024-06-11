@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 0b5b3ba11e47635448e1f0bd85fa4270
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 1a3a01a4bacb1ed46bda17f32347e78d
+  - enabled: 1
+    path: Assets/Scenes/Slots.unity
+    guid: 7e379757e6160fc4d803487f7c6dcc96
+  - enabled: 1
+    path: Assets/Scenes/Scarabs.unity
+    guid: 61062cc7d234ff5418e1b81798ccf98c
+  - enabled: 1
+    path: Assets/Scenes/Colors.unity
+    guid: fe092d19855345c458bfc10055673647
+  m_configObjects: {}
